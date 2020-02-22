@@ -1,0 +1,23 @@
+@model Affair
+
+
+<div>
+    <h1>Dojo Activity Center</h1>
+    <a asp-action="Dashboard" asp-controller="Home">Home</a>
+    <a asp-action="Logout" asp-controller="Home">Logout</a>
+</div>
+
+<div>
+    <h1>@Model.Title</h1>
+    <h5 class="text-center">Coordinator: @Model.Creator</h5>
+    <h5 class="text-center">Date: @Model.AffairDate.ToString("MMMM dd, yyyy")</h5>
+    <h5 class="text-center">Description: @Model.Description</h5>
+    <h5>Participants:</h5>
+</div>
+
+<ul>
+    @foreach(User user in ViewBag.usersThatReserved)
+    {
+        <li>@user.FirstName</li>
+    }
+</ul>

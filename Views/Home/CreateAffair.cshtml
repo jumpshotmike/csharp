@@ -1,0 +1,45 @@
+@model Affair
+
+
+<div>
+    <h1>Dojo Activity Center</h1>
+    <h2>Create an Activity</h2>
+</div>
+<div class="text-right">
+    <a asp-action="Dashboard" asp-controller="Home">Home</a>
+    <a asp-action="Logout" asp-controller="Home">Logout</a>
+</div>
+
+<form asp-action="CreateAffair" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="Title" class="text-danger"></span>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Time" class="text-danger"></span>
+        <label asp-for="Time"></label>
+        <input asp-for="Time" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="AffairDate" class="text-danger"></span>
+        <label asp-for="AffairDate"></label>
+        <input asp-for="AffairDate" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Duration" class="text-danger"></span>
+        <label asp-for="Duration"></label>
+        <input asp-for="Duration" class="form-control">
+        <select asp-for="Duration" class="form-control">
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+            <option value="days">Days</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Description" class="text-danger"></span>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Activity</button>
+</form>
